@@ -1,0 +1,22 @@
+//Breakpoints
+@tablet: 960px;
+@desktop: 1200px;
+
+// you can set .font(12px, 16px, 15px, 20px, 18px, 25px), and it will output the font sizes and line heights for mobile, tablet and desktops
+.font(@mf,@ml,@tf,@tl,@df,@dl) {
+    font-size: @mf;
+    line-height: @ml;
+    @media (min-width: @tablet) {
+        font-size: @tf;
+        line-height: @tl;
+    }
+    @media (min-width: @desktop) {
+        font-size: @df;
+        line-height: @dl;
+    }
+}
+
+.transition(@property: all, @time: 0.2s, @ease: linear, @delay: 0s) {
+    -webkit-transition: @property @time @ease @delay;
+    transition: @property @time @ease @delay;
+}
